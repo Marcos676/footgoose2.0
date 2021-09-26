@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Premium"
+    },
+    {
+        "id": 2,
+        "name": "Regular"
+    },
+    {
+        "id": 3,
+        "name": "Natural"
+    },
+    {
+        "id": 4,
+        "name": "Vitamina"
+    },
+    {
+        "id": 5,
+        "name": "Antiparacitario"
+    },
+    {
+        "id": 6,
+        "name": "Transporte"
+    },
+    {
+        "id": 7,
+        "name": "Varios"
+    },
+    {
+        "id": 8,
+        "name": "Pelotas"
+    },
+    {
+        "id": 9,
+        "name": "Otros"
+    }
+]

@@ -21,9 +21,13 @@
 
           <div id="carousel-controller" class="carousel slide col-12" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active img-content">
-                <img src="/images/productos/<%= product.image %> " class="imagen-carrusel" alt="...">
-              </div>
+              <% product.image.forEach((img, i) => { %>
+                <div class="carousel-item <%= i === 0 ? "active img-content" : null %>">
+                  <img src="/images/productos/<%= img %>"
+                    class="d-block w-100" style="width: 100%; height: 250px; object-fit: contain;"
+                    data-interval="1000" alt="...">
+                </div>    
+              <% }) %>
               <!-- espacio para mas imgs corousell -->
             </div>
             <a class="carousel-control-prev" href="#carousel-controller" role="button" data-slide="prev">
@@ -47,15 +51,15 @@
 
           <ul class="borde-inferior">
             <li>
-              <p>Para: Aves
+              <p>Para: <%= product.animal.name %> 
               </p>
             </li>
             <li>
-              <p>Categoría: Alimento
+              <p>Categoría: <%= product.category.name %> 
               </p>
             </li>
             <li>
-              <p>Sub-categoría: Alimento balanceado
+              <p>Sub-categoría: <%= product.subCategory.name %> 
               </p>
             </li>
           </ul>
@@ -74,7 +78,7 @@
             </li>
 
               <li>
-                <p>Oportunidad: Descuento
+                <p>Oportunidad: <%= product.label.name %> 
                 </p>
               </li>
 
@@ -88,8 +92,13 @@
             <img src="/images/tarjetas.png" alt="tarjetas de credito" style="width: 100%;">
           </div>
           <div class="col-12 col-md-6 detail-user-carrito-compra">
-            <a href="#" class="add-cart-button">AÑADIR AL CARRITO</a>
-          <a href="/productos/carrito" class="buy-now-button">COMPRAR AHORA</a>
+            <a class="add-cart-button" href="">Editar</a>
+            <form class="add-cart-button d-flex justify-content-center" action="">
+              <button class="btn-danger w-100" type="submit">Eliminar</button>
+            </form>
+
+           <!--  <a href="#" class="add-cart-button">AÑADIR AL CARRITO</a>
+          <a href="/productos/carrito" class="buy-now-button">COMPRAR AHORA</a> -->
           </div>
 
         </div>

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Perro",
+        "image": "iconoPerro.png"
+    },
+    {
+        "id": 2,
+        "name": "Gato",
+        "image": "iconoGato.png"
+    },
+    {
+        "id": 3,
+        "name": "Ave",
+        "image": "iconoAve.png"
+    },
+    {
+        "id": 4,
+        "name": "Reptil",
+        "image": "iconoReptil.png"
+    },
+    {
+        "id": 5,
+        "name": "Pez",
+        "image": "iconoPez.png"
+    },
+    {
+        "id": 6,
+        "name": "Roedor",
+        "image": "iconoRoedor.png"
+    }
+]
