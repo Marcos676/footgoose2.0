@@ -1,0 +1,74 @@
+
+/* generales */
+.nuevo-producto{
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .nuevo-producto h1{
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  /* Carrusel de Crear y editar Producto */
+  .nuevo-producto #carousel-controller{
+    text-align: center;
+  }
+  .nuevo-producto .imagen-carrusel {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+  }
+  .nuevo-producto .img-content {
+    height: 350px;
+  }
+
+  /* Boton de carrusel */
+
+  .nuevo-producto .carrusel-add-image .boton-image{
+    text-align: center;
+    margin: 25px 0;
+  }
+  .nuevo-producto .carrusel-add-image .boton-image input{
+    display: none;
+  }
+  /* Campos */
+  .nuevo-producto .seleccionar{
+    padding: 4px;
+  }
+  .nuevo-producto .margen{
+    margin-bottom: 15px;
+    display: flex;
+  }
+  .nuevo-producto span{
+    padding: 0 7px;
+    color: var(--color-rojo);
+  }
+  .nuevo-producto .vencimiento-precio-final .vencimiento {
+      padding: 0;
+  }
+  .nuevo-producto .botones {
+    justify-content: space-around;
+    margin: 25px 0;
+  }
+  .nuevo-producto .botones button{
+    margin: 10px;
+  }
+  .nuevo-producto .completar {
+    border: none;
+  }
+
+  .nuevo-producto form select,
+  .nuevo-producto form input {
+    margin: 5px 0;
+  }
+
+  @media (min-width: 768px){
+    .nuevo-producto {
+        margin-top: 15px;
+      }
+  }  

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('../partials/headerAdmin.ejs') %>
+
+            <div class="container contenido row admin-product-detail">
+                <!-- Carrusel -->
+                <div class="carrusel-add-image col-12 col-lg-6">
+                    <!-- Titulo -->
+                    <h3 class="col-12 centrar">
+                        Npmbre del producto
+                    </h3>
+                    <div id="carousel-controller" class="carousel slide col-12" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active img-content">
+                                <img src="/images/productos/" class="imagen-carrusel"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-controller" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-controller" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <!-- descripcion -->
+                    <p class="centrar col-12">Descripción: 
+                    </p>
+                </div>
+
+                <!-- Datos -->
+                <div class="padding-r-no col-12 col-lg-6 centrar">
+
+                    <ul class="borde-inferior">
+                        <li>
+                            <p>Para: 
+                            </p>
+                        </li>
+                        <li>
+                            <p>Categoría: 
+                            </p>
+                        </li>
+                        <li>
+                            <p>Sub-categoría:
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="borde-inferior">
+                        <li>
+                            <p>Precio original: $
+                            </p>
+                        </li>
+                        <li>
+                            <p>Descuento: %</p>
+                        </li>
+                        <li>
+                            <p>Precio final: $
+                            </p>
+                        </li>
+                        <li>
+                            <p>Etiqueta: 
+                            </p>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li>
+                            <p>Cantidad: 
+                            </p>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12">
+                    <form class="eliminar-prod" action="" method="POST">
+                        <div class="botones">
+                            <a href="/admin/products/1/edit" class="btn btn-success">Editar</a>
+                            <button type="submit" class="btn btn-danger btn-eliminar" >Eliminar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+
+            <%- include('../partials/footer') %>
+                <script>
+                    var check = document.getElementById("cambiarModo");
+
+                    check.onclick = () => {
+                        document.querySelector("body").classList.toggle('active');
+                    }
+                </script>
+
+
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+
+</html>

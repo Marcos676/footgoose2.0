@@ -1,0 +1,208 @@
+.catalogo .result {
+	font-size: 23px;
+    padding: 18px 0;
+}
+
+.catalogo .products {
+	justify-content: space-evenly;
+}
+
+.catalogo .form-group {
+	display: none;
+}
+
+.catalogo .type-categories {
+	margin-top: 30px;
+}
+
+.catalogo .type-categories li {
+	margin: 15px 0;
+}
+
+.catalogo .card .labels {
+	position: absolute;
+	top: 0%;
+	right: 5%;
+	width: 70px; 
+	height: 70px; 
+	z-index: 1; 
+	padding: 0;
+}
+
+.catalogo .type-categories a {
+	color: #7f7f7f;
+	font-size: 26px;
+	transition: ease .5s;
+}
+.catalogo .type-categories a:hover {
+	font-size: 30px;
+}
+
+.catalogo .card {
+    margin: 30px 10px;
+	justify-content: space-between;
+	transform: scale(1.02);
+}
+.catalogo .card:hover{
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+	transition: transform .5s ease, box-shadow .5s ease;
+}
+
+
+.catalogo .card .precio-final {
+	color: green;
+	font-size: 1.3em;
+}
+
+.catalogo .card .descontado {
+	color: red;
+	font-size: 10px;
+}
+
+.catalogo .card img {
+	height: 148px;
+	width: 100%;
+	object-fit: contain;
+	padding: 10px;
+}
+
+.catalogo .card .producto-datos {
+	align-items: baseline;
+}
+.catalogo .animales .imgs {
+	display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.catalogo .animales .imgs .animal-list {
+	display: inline;
+    border: none;
+    background-color: transparent;
+}
+.catalogo .animales .imgs img{
+    width: 80px;
+}
+
+
+.catalogo .resultado,
+.catalogo .topfilter {
+text-align: center;
+}
+.catalogo .breadcrumb {
+display: flex;
+background-color: transparent;
+justify-content: center;
+}
+
+.catalogo .breadcrumb a {
+	color: #7f7f7f;
+	font-size: 25px;
+	transition: ease .5s;
+	text-decoration: underline transparent;
+}
+.catalogo .breadcrumb a:hover {
+	text-decoration: underline var(--color-grisOscuro);
+}
+
+.catalogo .breadcrumb-item.active {
+    font-size: 25px;
+}
+
+.catalogo .containerheart {
+	position: absolute;
+	padding: 5px;
+	left: 73%;
+	top: 0%;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+	border-radius: 30px;
+	background-color: #fafafa;
+	z-index: 1;
+}
+
+.catalogo .containerheart i{
+font-size: 1.5rem;
+transition: .4s;
+}
+
+.catalogo .containerheart .fas {
+	color: gold;
+	transition: .4s;
+}
+
+.catalogo .containerheart:hover i{
+	color: gold;
+}
+
+.catalogo .card .box {
+	text-align: center;
+}
+
+.catalogo .card .box input {
+	border: none;
+	outline: none;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 0 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+	width: 100%;
+}
+
+.catalogo .card .box button {
+	background-color: var(--color-grisOscuro);
+	color: var(--color-blanco);
+	border: none;
+	outline: none;
+	padding: 0 10px;
+	border-radius: 5px;
+}
+
+.catalogo .card .box button:hover {
+	background-color: var(--color-naranjaClaro);
+	color: #000;
+}
+.catalogo .card .btn-compra {
+	text-align: center;
+	margin: 10px;
+}
+
+.catalogo .card .box input:hover,
+.catalogo .card .box input:focus {
+background: #f5cd76;
+color: #000;
+}
+
+.catalogo .pagination {
+	justify-content: center;
+}
+/* responsive */
+
+@media (max-width: 320px) {
+.catalogo .animales .imgs img {
+	width: 80px;
+}
+
+}
+
+@media (min-width: 425px) {
+	.catalogo .animales .imgs img {
+		width: 100px;
+	}
+}
+
+@media (min-width: 768px) {
+	.catalogo .result {
+		text-align: end;
+	}
+.catalogo .animales .imgs img {
+	width: 65px;
+}
+.catalogo .resultado,
+.catalogo .topfilter {
+	text-align: left;
+}
+.catalogo .breadcrumb {
+	display: inline-flex;
+	background-color: transparent;
+	justify-content: left;
+}
+}

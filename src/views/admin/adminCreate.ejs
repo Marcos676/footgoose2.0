@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../partials/headerAdmin.ejs') %>
+
+        <div class="contenido container-fluid adminCreate">
+
+            <form class="formulario-registro col-12" method="POST" action="/admin/crear">
+
+                <h1> Crear administrador</h1>
+
+                <!-- nombre -->
+                <div class="input-contenedor form-group col-12">
+
+                    <p><i class="fas fa-user icon"></i> Nombre y apellido</p>
+
+                    <input class="form-control " name="name" type="text" placeholder="Nombre y apellido"
+                        value="">
+
+                    <br>
+
+                    <span class="text-danger errorRegisterName">
+                        
+                    </span>
+
+                </div>
+
+                <!-- email -->
+                <div class="input-contenedor form-group col-12">
+
+                    <p><i class="fas fa-envelope icon"></i> Correo electrónico</p>
+
+                    <input class="form-control " name="email" type="text" placeholder="Correo electrónico"
+                        value="">
+
+                        <br>
+
+                    <span class="text-danger errorRegisterEmail">
+                       
+                    </span>
+
+                </div>
+
+                <!-- password -->
+                <div class="input-contenedor form-group col-12">
+                    
+                    <p><i class="fas fa-key icon"></i> Contraseña</p>
+
+                    <input class="form-control" name="password" type="password" placeholder="Contraseña">
+                    
+                    <br>
+
+                    <span class="text-danger errorRegisterPass">
+                        
+                    </span>
+
+                </div>
+                <!-- confirmar password -->
+                <div class="input-contenedor form-group col-12">
+
+                    <p><i class="fas fa-key icon"></i> Confirmar contraseña</p>
+
+                    <input class="form-control" name="confirmacion" type="password"
+                        placeholder="Confirmar contraseña">
+                        
+                        <br>
+
+                    <span class="text-danger errorRegisterConfirm">
+                      
+                    </span>
+
+                </div>
+
+                <div class="boton-crear col-12">
+                    <button type="submit" class="btn btn-success "> CREAR ADMINISTRADOR</button>
+                </div>
+
+        </div>
+        <%- include('../partials/footer.ejs') %>
+
+<script src="/javascripts/loginRegisterValidator.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

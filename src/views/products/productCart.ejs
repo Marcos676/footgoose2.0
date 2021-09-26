@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+
+  <body>
+
+    <%- include('./partials/header') %>
+      <div class="container-fluid contenido cart">
+        <!-- Titulo total de compra -->
+        <div>
+          <h1>Total: $ <span id="total">111</span></h1>
+        </div>
+
+        <div class="row carrito">
+          <!--  contenedor de productos -->
+          <div class="col-12 productolista">
+            <div class="row">
+<!-- ---------------------------------- -->
+              <!-- Comienzo de producto -->
+              <div class="product col-12">
+
+<div class="product-content row col-12">
+                <!-- IMAGEN -->
+                <div class="col-3 col-md-2 img-contain">
+                  <img class="img-fluid" src="/images/productos/15.jpg" alt="Producto">
+                </div>
+
+                <!-- CONTENEDOR DE DETALLE DE PRODUCTO -->
+                <div class="col-9 col-md-10">
+
+                  <!-- contenedor de datos -->
+                  <div class="row detprimfila">
+
+                    <!-- nombre de producto -->
+                    <div class="col-6">
+                      <h4 class="nombreProducto">Nombre de producto</h4>
+                    </div>
+
+                    <!-- descuentos y precio -->
+                    <div class="col-6">
+                      <h5 id="discount">
+                        <span>24</span>%off / <span>$12645</span>
+                      </h5>
+                    </div>
+
+                  </div>
+                  <!-- cantidad de articulos -->
+                  <div class="row detsegfila">
+                    <div class="col-4 cantidad">
+                      <p>Cantidad
+                        <input type="number" min="1"></input>
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              </div><!-- Final de contenedor de todos los productos -->
+              <!-- --------------------------------- -->
+
+
+
+             <!-- ---------------------------------- -->
+              <!-- Comienzo de producto -->
+              <div class="product col-12">
+
+                <div class="product-content row col-12">
+                                <!-- IMAGEN -->
+                                <div class="col-3 col-md-2 img-contain">
+                                  <img class="img-fluid" src="/images/productos/15.jpg" alt="Producto">
+                                </div>
+                
+                                <!-- CONTENEDOR DE DETALLE DE PRODUCTO -->
+                                <div class="col-9 col-md-10">
+                
+                                  <!-- contenedor de datos -->
+                                  <div class="row detprimfila">
+                
+                                    <!-- nombre de producto -->
+                                    <div class="col-6">
+                                      <h4 class="nombreProducto">Nombre de producto</h4>
+                                    </div>
+                
+                                    <!-- descuentos y precio -->
+                                    <div class="col-6">
+                                      <h5 id="discount">
+                                        <span>24</span>%off / <span>$12645</span>
+                                      </h5>
+                                    </div>
+                
+                                  </div>
+                                  <!-- cantidad de articulos -->
+                                  <div class="row detsegfila">
+                                    <div class="col-4 cantidad">
+                                      <p>Cantidad
+                                        <input type="number" min="1"></input>
+                                      </p>
+                                    </div>
+                
+                                  </div>
+                
+                                </div>
+                              </div>
+                
+                              </div><!-- Final de contenedor de todos los productos -->
+                              <!-- --------------------------------- -->
+
+
+
+
+
+              <!-- botones para seguir comprando o quitar del carrito -->
+              <div class="col-12 grupobotones d-flex justify-content-center">
+                <div class="btn btn-group botons">
+                  <button class="btn-secondary quitar"><i class="fas fa-times-circle"></i> Vaciar el
+                    carrito</button>
+                  <button class="btn-secondary seguir"><i class="fas fa-cart-plus"></i> Seguir comprando</button>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- final de objeto -->
+          </div>
+
+          <!-- boton para mobile checkout desplegable -->
+          <div class="col-12 divdeboton">
+            <button class="btn btn-success btn-carrito" data-pushbar-target="pushbar-checkout"><i
+                class="fas fa-receipt"></i>
+              Finalizar compra</button>
+          </div>
+
+        </div>
+
+
+      </div>
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

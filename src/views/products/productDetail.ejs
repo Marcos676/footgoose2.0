@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head', {title: 'Detalle'}) %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+      <!--DETALLE DE PRODUCTOS-->
+      <div class="container-fluid contenido admin-product-detail">
+      <div class="row">
+
+        <!-- Carrusel -->
+        <div class="carrusel-add-image col-12 col-lg-6">
+          <!-- titulo -->
+          <div>
+            <h2 class="products-title">
+              <%= product.name %> 
+            </h2>
+          </div>
+
+          <div id="carousel-controller" class="carousel slide col-12" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active img-content">
+                <img src="/images/productos/<%= product.image %> " class="imagen-carrusel" alt="...">
+              </div>
+              <!-- espacio para mas imgs corousell -->
+            </div>
+            <a class="carousel-control-prev" href="#carousel-controller" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-controller" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- descripcion -->
+          <p class="centrar col-12 descripcion">Descripción: <%= product.description %> 
+          </p>
+
+
+        </div>
+
+        <!-- Datos -->
+        <div class="padding-r-no col-12 col-lg-6 centrar">
+
+          <ul class="borde-inferior">
+            <li>
+              <p>Para: Aves
+              </p>
+            </li>
+            <li>
+              <p>Categoría: Alimento
+              </p>
+            </li>
+            <li>
+              <p>Sub-categoría: Alimento balanceado
+              </p>
+            </li>
+          </ul>
+          <ul class="borde-inferior">
+            <li>
+              <p>Precio original: $<%= product.price %> 
+              </p>
+            </li>
+            <li>
+              <p>Descuento: <%= product.discount %> %
+              </p>
+            </li>
+            <li>
+              <p>Precio final: $<%= product.price - ((product.discount * product.price) /100) %> 
+              </p>
+            </li>
+
+              <li>
+                <p>Oportunidad: Descuento
+                </p>
+              </li>
+
+          </ul>
+        </div>
+        <!-- añadir al carrito -->
+
+        <div class="col-12">
+          <div class="row">
+          <div class="col-12 col-md-6" style="margin-bottom: 20px; justify-content: center;">
+            <img src="/images/tarjetas.png" alt="tarjetas de credito" style="width: 100%;">
+          </div>
+          <div class="col-12 col-md-6 detail-user-carrito-compra">
+            <a href="#" class="add-cart-button">AÑADIR AL CARRITO</a>
+          <a href="/productos/carrito" class="buy-now-button">COMPRAR AHORA</a>
+          </div>
+
+        </div>
+
+        </div>
+        <br><br><br><br>
+
+      </div>
+      </div>
+
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head', {title: 'Catalogo' })%>
+
+  <body>
+
+
+    <%- include('../partials/header') %>
+
+
+
+      <main class="container-fluid contenido catalogo">
+
+        <div class="row">
+          <!-- FILTRO SUPERIOR -->
+          <div class="filtro-superior col-12 row">
+            <!-- Rutas -->
+            <div class="col-md-8 col-sm-8">
+              <section aria-label="breadcrumb ruta">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <% if (typeof search !="undefined" ) { %>
+                    <li class="breadcrumb-item"><a href="/productos">Tienda</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Busqueda </li>
+
+                    <% } else { %>
+                      <li class="breadcrumb-item active" aria-current="page"> Tienda </li>
+                      <% } %>
+
+                </ol>
+              </section>
+            </div>
+
+            <!-- FILTRO IZQUIERDO -->
+          </div>
+          <div class="filtro-izquierdo col-sm-4 col-md-3">
+            <!-- animales -->
+            <div class="animales">
+              <h3>Comprar por</h3>
+              <section class="imgs">
+
+                <div>
+                  <a href="">
+                    <img src="images/categorias/iconoPerro.png" alt="perro">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="images/categorias/iconoGato.png" alt="gato">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="images/categorias/iconoAve.png" alt="ave">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="images/categorias/iconoPez.png" alt="pez">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="images/categorias/iconoRoedor.png" alt="roedor">
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <img src="images/categorias/iconoReptil.png" alt="reptil">
+                  </a>
+                </div>
+
+              </section>
+            </div>
+           
+          </div>
+          <section class="col-sm-8 col-md-9">
+            <article class="col-12">
+
+              <div class="products row">
+
+
+                <!-- <h1 style="text-align: center;">No se encontraron resultados</h1> -->
+
+                <!-- 
+                        VISTA DE PRODUCTOS DE USUARIO
+                       -->
+                       <% products.forEach(product => { %>
+
+                        <!-- producto -->
+                        <div class="card producto container-fluid col-sm-5 col-lg-3">
+                     
+                         <!-- imagen -->
+                         <a href="/productos/detalle/<%= product.id %>  ">
+                               <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                 <div class="carousel-inner" style="width: 100%; object-fit: contain;">
+
+                                   <div class="carousel-item active">
+                                     <img src="/images/productos/<%= product.image %> "
+                                       class="d-block w-100" style="width: 100%; height: 250px; object-fit: contain;"
+                                       data-interval="1000" alt="...">
+                                   </div>                                      
+
+                                 </div>
+                               </div>
+                         </a>
+
+                         <div class="producto-datos">
+                           <!-- nombre -->
+                           <h5 class="titulo producto">
+                             <%= product.name %>
+                           </h5>
+                           <!-- precio y descuento -->
+                           <p><span class="precio-final">$
+                             <%= product.price %>
+                             </span>
+                               <span class="descontado">
+                                 <%= product.discount.toFixed(2) %>%OFF
+                               </span>
+                           </p>
+                           <!-- cantidad y comprar -->
+
+                             <div class="box">
+                               <input type="number" max="10" min="0">
+                             </div>
+                             <div class="btn-compra">
+                               <button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i>
+                                 Agregar</button>
+                             </div>
+
+                         </div>
+                       </div>
+                       <!-- /producto -->
+                     <% }) %>
+                
+              </div>
+
+        </div>
+
+        </article>
+
+        </section>
+
+
+        </div>
+
+      </main>
+
+      <%- include('../partials/footer') %>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+          integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
+          </script>
+        <script src="https://unpkg.com/jquery.nice-number@2.1.0/dist/jquery.nice-number.min.js"></script>
+        <script>
+          $('input[type="number"]').niceNumber();
+        </script>
+
+        <script src="/javascripts/cart.js"></script>
+  </body>
+
+</html>

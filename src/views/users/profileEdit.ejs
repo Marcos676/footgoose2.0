@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <%- include('../partials/header.ejs') %>
+
+
+            <div class="container-fluid contenido">
+                <!--EDITAR-->
+                <form class="row user-profile" action="/usuario/editar?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+
+                    <!-- imagen + input -->
+                    <div class="col-12">
+                        <!-- img perfil -->
+                        <img src="/images/users/undefined.PNG" alt="foto de perfil" id="image">
+
+                        <!-- input file perfil -->
+                        <div class="boton-image form-group">
+                            <label class="btn btn-success labelImg" for="archivo">Cambiar foto</label>
+                            <input class="form-control" type="file" name="img" id="archivo" accept="image/*">
+                            <br>
+                            <span class="text-danger errorImg">
+                                
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h4>Generales</h4>
+
+                        <!-- nombre de usuario -->
+                        <div class="col-12 form-group">
+                            <i class="fas fa-user icon" ></i>
+                            <input class="form-control" type="text" placeholder=" Nombre completo" name="name"
+                                value=""><br>
+                            <span class="text-danger errorName">
+                               
+                            </span>
+                        </div>
+
+                        <!-- email -->
+                        <div class="col-12 form-group">
+                            <i class="fas fa-envelope icon"></i>
+                            <input class="form-control" type="email" placeholder=" Correo electrónico" name="email"
+                                value=""><br>
+                            <span class="text-danger errorEmail">
+                               
+                            </span>
+                        </div>
+
+                        <!-- direccion -->
+                        <div class="col-12 form-group">
+                            <i class="fas fa-home"></i>
+                            <input class="form-control" type="text" placeholder=" Dirección" name="address"
+                                value=""><br>
+                            <span class="text-danger">
+                                
+                            </span>
+                        </div>
+
+                        <!-- teléfono -->
+                        <div class="col-12 form-group">
+                            <i class="fas fa-phone-alt"></i>
+                            <input class="form-control" type="tel" placeholder=" Teléfono" name="tel"
+                                value=""><br>
+                            <span class="text-danger errorTel">
+                               
+                            </span>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- contraseñas -->
+                    <div class=" col-12 col-md-6">
+                        <h4>Cambiar contraseña</h4>
+
+                        <!-- password original -->
+                        <div class=" col-12 form-group">
+                            <i class="fas fa-key icon"></i>
+                            <input class="form-control" type="password" placeholder=" Actual" name="password"><br>
+                            <span class="text-danger errorPass">
+                               
+                            </span>
+                        </div>
+                        <!-- nuevo password -->
+                        <div class=" col-12 form-group">
+                            <i class="fas fa-key icon"></i>
+                            <input class="form-control" type="password" placeholder=" Nueva" name="pass1"><br>
+                            <span class="text-danger errorNewPass">
+                                
+                            </span>
+                        </div>
+                        <!-- Revalidar password -->
+                        <div class=" col-12 form-group">
+                            <i class="fas fa-key icon"></i>
+                            <input class="form-control" type="password" placeholder=" Repetir nueva" name="pass2"><br>
+                            <span class="text-danger errorConfirmNew">
+                               
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success ">Guardar</button>
+                    </div>
+                </form>
+                <form id="formulario" class="row user-delete" action="/usuario/delete/?_method=DELETE" method="POST">
+                    <div class="formulario col-12">
+                    <button class="btn btn-danger" type="submit">Eliminar cuenta</button>
+                    </div>
+                    </form>
+            </div>
+            <%- include('../partials/footer.ejs') %>
+                <script src="/javascripts/editUserValidator.js"></script>
+                
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>

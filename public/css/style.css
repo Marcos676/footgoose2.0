@@ -1,0 +1,74 @@
+/* IMPORTS*/
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Work+Sans:ital,wght@0,400;0,600;1,200&display=swap');
+/* en todas */
+@import 'header.css';
+@import 'footer.css';
+/* generales */
+@import 'home.css';
+@import 'faqs.css';
+@import 'catalogo.css';
+/* products */
+@import 'productDetail.css';
+@import 'productCart.css';
+/* users */
+@import 'loginRegister.css';
+@import 'profileEdit.css';
+@import 'welcome.css';
+/* admin */
+@import 'adminProductDetail.css';
+@import 'product-Add-Edit.css';
+@import 'adminCreate.css';
+
+
+/* VARIABLES */
+:root {
+  --color-naranjaClaro: #f5cd76;
+  --color-grisClaro: #ebebeb;
+  --color-gris50: #7f7f7f;
+  --color-grisOscuro: #666666;
+  --color-verde: #55b054 ;
+  --color-blanco: #f2f2f2;
+  --color-rojo: #ff0000; 
+  --color-amarillo: #e6ff00;
+  --color-negro: #000;
+  --font1: "Work-Sans";
+  --font2: "Staatliches"
+}
+/* GENERALES */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--color-grisClaro);
+  transition: background-color .9s;
+}
+body.active{
+  background-color: #09071e;
+  color: var(--color-gris50)
+}
+a{
+  color: initial;
+}
+a:hover {
+  text-decoration: none;
+  color: initial;
+}
+li{
+  list-style: none;
+}
+
+.faqs a {
+  color: var(--color-gris50);
+}
+/* ------------CONTENIDO DE PÁGINAS ---------------*/
+.contenido {
+  margin-top: 102px;
+  max-width: 1350px;
+}
+
+@media (min-width: 768px){
+  .contenido {
+    margin-top: 0;
+  }
+}
