@@ -92,7 +92,9 @@
             <img src="/images/tarjetas.png" alt="tarjetas de credito" style="width: 100%;">
           </div>
           <div class="col-12 col-md-6 detail-user-carrito-compra">
-            <a class="add-cart-button" href="">Editar</a>
+            <!-- Boton editar -->
+            <a class="add-cart-button" href="/productos/editar/<%= product.id %> ">Editar</a>
+            <!-- Boton borrar -->
             <form class="add-cart-button d-flex justify-content-center" action="">
               <button class="btn-danger w-100" type="submit">Eliminar</button>
             </form>

@@ -43,13 +43,19 @@ module.exports = {
 
     },
     edit: (req,res) => {
-
+        res.render('./products/productEdit', {
+            product: products.find( product => product.id === +req.params.id),
+            animals,
+            categories,
+            subCategories,
+            labels
+        })
     },
     editProcess: (req,res) => {
         
     },
     destroy: (req,res) => {
-        
+
     }
 
 }

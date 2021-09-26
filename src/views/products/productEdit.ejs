@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head', {title: "Crear producto"}) %>
+<%- include('../partials/head', {title: "Editar producto"}) %>
 
   <body>
     <%- include('../partials/headerAdmin') %>
@@ -18,21 +18,13 @@
               <div id="carousel-controller" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                   
-                  <div class="carousel-item active img-content">
-                    <img src="/images/productos/undefinedProduct.png" class="imagen-carrusel" alt="..." id="img0">
-                  </div>
-                    
-                  <div class="carousel-item img-content">
-                    <img
-                    src="/images/productos/1MoreImages.png" class="imagen-carrusel" id="img1"
-                      alt="...">
-                  </div>
-        
-                  <div class="carousel-item img-content">
-                    <img
-                    src="/images/productos/1MoreImages.png" class="imagen-carrusel" id="img2"
-                      alt="...">
-                  </div>
+                  <% product.image.forEach((img, i) => { %>
+                    <div class="carousel-item <%= i === 0 ? "active" : null %>">
+                      <img src="/images/productos/<%= img %>"
+                        class="d-block w-100" style="width: 100%; height: 250px; object-fit: contain;"
+                        data-interval="1000" alt="...">
+                    </div>    
+                  <% }) %>  
         
                   <a class="carousel-control-prev" href="#carousel-controller" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
