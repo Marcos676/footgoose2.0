@@ -32,15 +32,12 @@ module.exports = {
             labels
         })
     },
-    add: (req,res) => {
+    createProcess: (req, res) => {
 
         return res.send(req.body)
 
 
         res.redirect('/products')
-    },
-    addProcess: (req,res) => {
-
     },
     edit: (req,res) => {
         res.render('./products/productEdit', {
