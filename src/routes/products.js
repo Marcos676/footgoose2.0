@@ -1,8 +1,9 @@
 var express = require('express');
-const { list, detail, create, add, edit } = require('../Controllers/productsController');
 var router = express.Router();
 
-
+//importaciones
+const { list, detail, create, add, edit } = require('../Controllers/productsController');
+const uploadImgProduct = require('../utils/uploadImgProduct')
 
 //La ruta viene de:   /productos
 //Listar
@@ -13,7 +14,7 @@ router.get('/detalle/:id', detail);
 
 //crear
 router.get('/crear', create)
-router.post('/crear', add)
+router.post('/crear', uploadImgProduct.array('img'), addProcess)
 
 //Editar
 router.get('/editar/:id', edit);
