@@ -1,5 +1,5 @@
 var express = require('express');
-const { list, detail, create, add, edit } = require('../Controllers/productsController');
+const { list, detail, create, createProcess, edit } = require('../Controllers/productsController');
 var router = express.Router();
 
 
@@ -13,7 +13,7 @@ router.get('/detalle/:id', detail);
 
 //crear
 router.get('/crear', create)
-router.post('/crear', add)
+router.post('/crear', createProcess)
 
 //Editar
 router.get('/editar/:id', edit);
