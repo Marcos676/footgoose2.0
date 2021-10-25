@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head.ejs', {title: "Perfil"}) %>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
    
     <div class="contenido container-fluid welcome">
         <div class ="welcomeBox">
-        <h1> Bienvenido <br><b></b> </h1>
+        <h1> Bienvenido <br><b><%= localsUser.firstName %> </b> </h1>
         <h3>¡Has ingresado correctamente!</h3>
         <a class='botonEditarUser' href="/usuario/editar"><i class="far fa-edit"></i>   Editar</a>
         <a class='botonDesloguear' href="/usuario/logout"><i class="fas fa-sign-out-alt"></i>   Cerrar sesión</a>

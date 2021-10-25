@@ -4,6 +4,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override')
+const session = require('express-session');
+
+let localsCheck = require('./middlewares/localsCheck');
+let cookieCheck = require('./middlewares/cookieCheck')
+
 
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
@@ -23,18 +29,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public'))); // recursos estaticos
+app.use(methodOverride('_method'))
+app.use(session({
+	secret: "palabra-secreta",
+	resave: true,
+  	saveUninitialized: false
+}));
 
 //middlewares
-
+app.use(localsCheck);
+app.use(cookieCheck);
 
 
 //rutas
 app.use('/', indexRouter);
-
 app.use('/productos', productsRouter);
-
 app.use('/usuario', usersRouter);
-
 app.use('/admin', adminRouter);
 
 
