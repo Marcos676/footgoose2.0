@@ -1,4 +1,7 @@
 const bcrypt = require('bcryptjs');
+const fs = require('fs');
+const path = require('path');
+
 
 module.exports = {
     loginRegister: (req,res) => {
@@ -16,18 +19,18 @@ module.exports = {
         let names = fullName.trim().split(" ");
 
         let newUser = {
-            id: users[users.length - 1].id + 1,
+            id: users.length == 0 ? 1 : users[users.length - 1].id + 1,
             firstName: names[0],
             lastName: names[1],
             email: email,
-            password: bcript.hashSync(password, 10),
+            password: bcrypt.hashSync(password, 10),
             address: null,
             image: "undefined.PNG",
             tel: null,
             admin: 0
         }
 
-        users = users.push(newUser)
+        users.push(newUser)
 
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users, null, 2), 'utf-8')
 
@@ -43,7 +46,7 @@ module.exports = {
             return res.render('./users/loginRegister')
         }
 
-        if (bcrypt.compareSync(password, user.password)){
+        if (!bcrypt.compareSync(password, user.password)){
             return res.render('./users/loginRegister')
         }
 
@@ -56,17 +59,19 @@ module.exports = {
             admin : user.admin
         }
 
+        res.locals.localsUser = req.session.user
+
         if (rememberme) {
             res.cookie('FootGoose', req.session.user, { maxAge: 1000 * 60 * 60 * 24 });
         }
-
-        return res.redirect('/usuario/perfil')
+        
+        return res.redirect('/')
     },
     profile: (req,res) => {
         if (!req.session.user) {
-            return res.render('./users/ingresar')
+            return res.render('./users/loginRegister')
         }
-        return res.render('./users/loginRegister')
+        return res.render('./users/profile')
     },
     logout: (req,res) => {
         delete req.session.user;

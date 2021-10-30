@@ -1,13 +1,13 @@
 [
-    {
+  {
     "id": 1,
     "firstName": "Gabriel",
     "lastName": "Patiño",
     "email": "gaby@123.com",
-    "password": "123123",
-    "address": "sakdjsakjdkjashd",
+    "password": "$2a$10$2lR2DEUkIdIsfyhlTgU76.MDwmp880oakQCjj4dO/4nIxklwdi3c6",
+    "address": null,
     "image": "undefined.PNG",
-    "tel": 1123123123,
+    "tel": null,
     "admin": 0
-    }
+  }
 ]
