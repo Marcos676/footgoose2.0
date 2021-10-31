@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     
     <%- include('../partials/head.ejs', {title: "Perfil"}) %>
 </head>
 <body>
-    <%- include('../partials/header.ejs') %>
+    <% if (localsUser.admin == 1) { %>
+        <%- include('../partials/headerAdmin.ejs') %>
+    <% } else { %>
+        <%- include('../partials/header.ejs') %>
+    <% } %>
    
     <div class="contenido container-fluid welcome">
         <div class ="welcomeBox">
@@ -16,6 +20,9 @@
         </div>
         </div>
 
-    <%- include('../partials/footer.ejs') %>
+        <% if (localsUser.admin == 0) { %>
+            <%- include('../partials/footer.ejs') %>
+        <% } %>
+    
 </body>
 </html>

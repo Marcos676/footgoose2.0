@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<%- include('../partials/head.ejs') %>
-
+<%- include('../partials/head.ejs', {title: "editar perfil"}) %>
     <body>
-
-        <%- include('../partials/header.ejs') %>
-
-
+        <% if (localsUser.admin == 1) { %>
+            <%- include('../partials/headerAdmin.ejs') %>
+        <% } else { %>
+            <%- include('../partials/header.ejs') %>
+        <% } %>
             <div class="container-fluid contenido">
                 <!--EDITAR-->
                 <form class="row user-profile" action="/usuario/editar?_method=PUT" method="POST"
@@ -16,7 +15,7 @@
                     <!-- imagen + input -->
                     <div class="col-12">
                         <!-- img perfil -->
-                        <img src="/images/users/undefined.PNG" alt="foto de perfil" id="image">
+                        <img src="/images/users/<%= user.image %>"  alt="foto de perfil" id="image">
 
                         <!-- input file perfil -->
                         <div class="boton-image form-group">
@@ -35,8 +34,8 @@
                         <!-- nombre de usuario -->
                         <div class="col-12 form-group">
                             <i class="fas fa-user icon" ></i>
-                            <input class="form-control" type="text" placeholder=" Nombre completo" name="name"
-                                value=""><br>
+                            <input class="form-control" type="text" placeholder=" Nombre completo" name="fullName"
+                                value="<%= `${user.firstName} ${user.lastName}` %>"><br>
                             <span class="text-danger errorName">
                                
                             </span>
@@ -46,17 +45,17 @@
                         <div class="col-12 form-group">
                             <i class="fas fa-envelope icon"></i>
                             <input class="form-control" type="email" placeholder=" Correo electrónico" name="email"
-                                value=""><br>
+                                value="<%= user.email %>"><br>
                             <span class="text-danger errorEmail">
                                
                             </span>
                         </div>
 
-                        <!-- direccion -->
+                        <% if (localsUser.admin == 0) { %>
+                             <!-- direccion -->
                         <div class="col-12 form-group">
                             <i class="fas fa-home"></i>
-                            <input class="form-control" type="text" placeholder=" Dirección" name="address"
-                                value=""><br>
+                            <input class="form-control" type="text" placeholder=" Dirección" name="address" value="<%= user.address %>"><br>
                             <span class="text-danger">
                                 
                             </span>
@@ -66,12 +65,14 @@
                         <div class="col-12 form-group">
                             <i class="fas fa-phone-alt"></i>
                             <input class="form-control" type="tel" placeholder=" Teléfono" name="tel"
-                                value=""><br>
+                                value="<%= user.tel %>"><br>
                             <span class="text-danger errorTel">
                                
                             </span>
                         </div>
 
+                        <% } %>
+                       
                     </div>
 
 
@@ -116,7 +117,6 @@
                     </div>
                     </form>
             </div>
-            <%- include('../partials/footer.ejs') %>
                 <script src="/javascripts/editUserValidator.js"></script>
                 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

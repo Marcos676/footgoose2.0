@@ -1,13 +1,11 @@
 [
   {
     "id": 1,
-    "firstName": "Gabriel",
+    "firstName": "Marcos",
     "lastName": "Patiño",
     "email": "gaby@123.com",
     "password": "$2a$10$2lR2DEUkIdIsfyhlTgU76.MDwmp880oakQCjj4dO/4nIxklwdi3c6",
-    "address": null,
-    "image": "undefined.PNG",
-    "tel": null,
-    "admin": 0
+    "image": "user-1635641311982.jpeg",
+    "admin": 1
   }
 ]
