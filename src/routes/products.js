@@ -22,6 +22,6 @@ router.get('/editar/:id', adminCheck, edit);
 router.put('/editar/:id', uploadImgProduct.array('img'), editProcess)
 
 //Borrar
-router.post('/borrar/:id', destroy);
+router.delete('/borrar/:id', destroy);
 
 module.exports = router;

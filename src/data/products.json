@@ -1,22 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "pecera",
-    "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n\r\nAenean lectus. ",
-    "price": 1590,
-    "discount": 48,
-    "cuantity": 9,
-    "image": [
-      "1.jpg",
-      "2.jpg",
-      "3.jpg"
-    ],
-    "label": 1,
-    "animal": 3,
-    "category": 2,
-    "subCategory": 2
-  },
-  {
     "id": 2,
     "name": "Wine - Peller Estates Late",
     "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar ",

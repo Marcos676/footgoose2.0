@@ -16,20 +16,20 @@ module.exports = {
         })
     },
     detail: (req, res) => {
-        let productFinded = products.find(product => product.id === +req.params.id);
+        let productEdited = products.find(product => product.id === +req.params.id);
 
         let product = {
-            id: product.id,
-            name: product.name,
-            description: product.description,
-            price: product.price,
-            discount: product.discount,
-            cuantity: product.cuantity,
-            image: product.image,
-            label: labels.find(label => label.id === productFinded.label),
-            animal: animals.find(animal => animal.id === productFinded.animal),
-            category: categories.find(category => category.id === productFinded.category),
-            subCategory: subCategories.find(subCategory => subCategory.id === productFinded.subCategory)
+            id: productEdited.id,
+            name: productEdited.name,
+            description: productEdited.description,
+            price: productEdited.price,
+            discount: productEdited.discount,
+            cuantity: productEdited.cuantity,
+            image: productEdited.image,
+            label: labels.find(label => label.id === productEdited.label),
+            animal: animals.find(animal => animal.id === productEdited.animal),
+            category: categories.find(category => category.id === productEdited.category),
+            subCategory: subCategories.find(subCategory => subCategory.id === productEdited.subCategory)
         }
         return res.render('./products/productDetail', {
             product
@@ -68,20 +68,20 @@ module.exports = {
     },
     edit: (req, res) => {
         const products = require('../data/products.json');
-        let productFinded = products.find(product => product.id === +req.params.id);
+        let productEdited = products.find(product => product.id === +req.params.id);
 
         let product = {
-            id: product.id,
-            name: product.name,
-            description: product.description,
-            price: product.price,
-            discount: product.discount,
-            cuantity: product.cuantity,
-            image: product.image,
-            label: labels.find(label => label.id === productFinded.label),
-            animal: animals.find(animal => animal.id === productFinded.animal),
-            category: categories.find(category => category.id === productFinded.category),
-            subCategory: subCategories.find(subCategory => subCategory.id === productFinded.subCategory)
+            id: productEdited.id,
+            name: productEdited.name,
+            description: productEdited.description,
+            price: productEdited.price,
+            discount: productEdited.discount,
+            cuantity: productEdited.cuantity,
+            image: productEdited.image,
+            label: labels.find(label => label.id === productEdited.label),
+            animal: animals.find(animal => animal.id === productEdited.animal),
+            category: categories.find(category => category.id === productEdited.category),
+            subCategory: subCategories.find(subCategory => subCategory.id === productEdited.subCategory)
         }
 
         res.render('./products/productEdit', {
@@ -121,17 +121,20 @@ module.exports = {
     destroy: (req, res) => {
         const products = require('../data/products.json');
 
-        let product = products.find(product => product.id === +req.params.id)
+        let productToDelete = products.find(product => product.id === +req.params.id)
 
-        product.image.forEach(img => {
-            if (fs.existSync(path.join(__dirname, "../../public/images/products/" + img)) && img != "undefinedProduct.png") {
+        // product.image.forEach(img => {
+        //     if (fs.existSync(path.join(__dirname, "../../public/images/products/" + img)) && img != "undefinedProduct.png") {
 
-                fs.unlinkSynk(path.join(__dirname, "../../public/images/products/" + img))
-            }
-        })
+        //         fs.unlinkSynk(path.join(__dirname, "../../public/images/products/" + img))
+        //     }
+        // })
 
-        return res.redirect('/admin')
+        let productsModified = products.filter(product => product.id != productToDelete.id)
 
+        fs.writeFileSync(productsFilePath, JSON.stringify(productsModified, null, 2), 'utf-8')
+
+        return res.redirect('/productos')
     }
 
 }
