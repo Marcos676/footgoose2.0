@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //importaciones
-const { list, detail, create, createProcess, edit, editProcess, destroy } = require('../controllers/productsController');
+const { list, detail, create, createProcess, edit, editProcess, destroy } = require('../Controllers/productsController');
 const uploadImgProduct = require('../middlewares/uploadImgProduct')
 const adminCheck = require('../middlewares/adminCheck')
 

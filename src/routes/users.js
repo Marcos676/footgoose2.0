@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {loginRegister, profile, loginProcess, registerProcess, logout, editProfile, editProfileProcess} = require('../controllers/userController')
+const {loginRegister, profile, loginProcess, registerProcess, logout, editProfile, editProfileProcess} = require('../Controllers/userController')
 
 //middlewares
 let uploadAvatar = require('../middlewares/uploadAvatar')
