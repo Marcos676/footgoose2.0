@@ -13,7 +13,7 @@
                 <div class="row">
 
                 <!--INICIAR SESIÓN-->
-                <form class="formulario-iniciar row col-12 col-md-6" method="POST" action="/usuario/ingresar">
+                <form class="formulario-iniciar row col-12 col-md-6" method="POST" action="/usuario/login">
                     
                     <h1 class="col-12"> Ingresar</h1>
 
@@ -65,7 +65,7 @@
 
                 <!--REGISTRO-->
 
-                <form class="formulario-registro row col-12 col-md-6" method="POST" action="/usuario/register">
+                <form class="formulario-registro row col-12 col-md-6" method="POST" action="/usuario/registro">
                     
                     <h1 class="col-12"> Registrarse</h1>
 
@@ -74,9 +74,7 @@
 
                         <p><i class="fas fa-user icon"></i> Nombre y apellido</p>
 
-                        <input class="form-control " name="name" type="text" placeholder="Nombre y apellido"
-                            value="">
-
+                        <input class="form-control" name="fullName" type="text" placeholder="Nombre y apellido" value="">
                         <br>
 
                         <span class="text-danger errorRegisterName">
@@ -121,7 +119,7 @@
 
                         <p><i class="fas fa-key icon"></i> Confirmar contraseña</p>
 
-                        <input class="form-control" name="confirmacion" type="password"
+                        <input class="form-control" name="rePassword" type="password"
                             placeholder="Confirmar contraseña">
                             
                             <br>

@@ -19,13 +19,11 @@
                 </div>
                 <!-- INGRESAR -->
                 <div class="ingresar col-2 col-md-3">
-                    <% if (typeof localUser != 'undefined') { %>
-                        <a href="/usuario/ingresar"><img src="/images/users/<%= localUser.img %>" alt="imagen de perfil"> <%= `  ${localUser.firstName}`%> </a>
+                    <% if (locals.localsUser) { %>
+                        <a href="/usuario/perfil"><img src="/images/users/<%= locals.localsUser.image %>" alt="imagen de perfil"> <%= `  ${locals.localsUser.firstName}`%> </a>
                     <% } else { %>
                         <a href="/usuario/ingresar"> <i class="fas fa-paw"></i>  INGRESAR </a>
                     <% } %>
-
-                   
                 </div>
                 <!-- BURGUER BUTTON -->
                 <nav class="navbar-expand-md boton-hamburguesa col-2 col-md-12">
@@ -50,7 +48,7 @@
                         <!-- INGRESAR SOLO MOBILE -->
                         <ul class="navbar-nav ingresar solo-mobile col-12">
                           <li>
-                                <a href="/usuario/ingresar"> <i class="fas fa-paw"></i> <%= typeof localUser != 'undefined'? `  ${localUser.firstName}` : "  INGRESAR"%></a>
+                                <a href="/usuario/ingresar"> <i class="fas fa-paw"></i> <%= typeof localsUser != 'undefined'? `  ${localsUser.firstName}` : "  INGRESAR"%></a>
                           </li>
                         </ul>
                         <!-- NAVEGACION -->

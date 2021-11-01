@@ -92,15 +92,25 @@
             <img src="/images/tarjetas.png" alt="tarjetas de credito" style="width: 100%;">
           </div>
           <div class="col-12 col-md-6 detail-user-carrito-compra">
-            <!-- Boton editar -->
-            <a class="add-cart-button" href="/productos/editar/<%= product.id %> ">Editar</a>
-            <!-- Boton borrar -->
-            <form class="add-cart-button d-flex justify-content-center" action="">
+           
+          
+            <% if (typeof localsUser != 'undefined' && localsUser.admin == 1) { %>
+               <!-- Boton editar -->
+              <a class="add-cart-button" href="/productos/editar/<%= product.id %> ">Editar</a>
+
+                <!-- Boton borrar -->
+            <form class="add-cart-button d-flex justify-content-center" action="/productos/borrar/<%= product.id %>?_method=DELETE" method="POST">
               <button class="btn-danger w-100" type="submit">Eliminar</button>
             </form>
+            
+            <% } else { %>
+              <a href="#" class="add-cart-button">AÑADIR AL CARRITO</a>
 
-           <!--  <a href="#" class="add-cart-button">AÑADIR AL CARRITO</a>
-          <a href="/productos/carrito" class="buy-now-button">COMPRAR AHORA</a> -->
+              <a href="/productos/carrito" class="buy-now-button">COMPRAR AHORA</a>
+            <% } %>
+          
+
+            
           </div>
 
         </div>
