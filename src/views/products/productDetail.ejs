@@ -21,9 +21,9 @@
 
           <div id="carousel-controller" class="carousel slide col-12" data-ride="carousel">
             <div class="carousel-inner">
-              <% product.image.forEach((img, i) => { %>
+              <% product.images.forEach((img, i) => { %>
                 <div class="carousel-item <%= i === 0 ? "active img-content" : null %>">
-                  <img src="/images/productos/<%= img %>"
+                  <img src="/images/productos/<%= img.name %>"
                     class="d-block w-100" style="width: 100%; height: 250px; object-fit: contain;"
                     data-interval="1000" alt="...">
                 </div>    
@@ -51,11 +51,11 @@
 
           <ul class="borde-inferior">
             <li>
-              <p>Para: <%= product.animal.name %> 
+              <p>Para: <%= product.subCategory.category.animal.name %> 
               </p>
             </li>
             <li>
-              <p>Categoría: <%= product.category.name %> 
+              <p>Categoría: <%= product.subCategory.category.name %> 
               </p>
             </li>
             <li>
@@ -73,12 +73,12 @@
               </p>
             </li>
             <li>
-              <p>Precio final: $<%= product.price - ((product.discount * product.price) /100) %> 
+              <p>Precio final: $<%= ((product.price - ((product.discount * product.price) /100)).toFixed(2)) %> 
               </p>
             </li>
 
               <li>
-                <p>Oportunidad: <%= product.label.name %> 
+                <p>Oportunidad: <%= product.label.name %>
                 </p>
               </li>
 

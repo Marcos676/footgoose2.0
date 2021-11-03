@@ -5,7 +5,9 @@
     "lastName": "Patiño",
     "email": "gaby@123.com",
     "password": "$2a$10$2lR2DEUkIdIsfyhlTgU76.MDwmp880oakQCjj4dO/4nIxklwdi3c6",
-    "image": "user-1635641311982.jpeg",
-    "admin": 0
+    "address": null,
+    "image": "user-1635982635640.jpeg",
+    "tel": null,
+    "admin": 1
   }
 ]

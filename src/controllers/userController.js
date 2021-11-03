@@ -95,7 +95,7 @@ module.exports = {
             lastName,
             email,
             password: pass1 ? bcrypt.hashSync(pass1, 10) : user.password,
-            address: addres ? address : null,
+            address: typeof addres == undefined ? address : null,
             image: req.file ? req.file.filename : user.image,
             tel: tel ? tel : null,
             admin: user.admin

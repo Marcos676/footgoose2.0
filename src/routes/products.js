@@ -14,7 +14,7 @@ router.get('/', list);
 router.get('/detalle/:id', detail);
 
 //crear
-router.get('/crear', adminCheck, create)
+router.get('/crear', adminCheck, create)//EL MIDDLEWARE DE RESTRICCIÓN NO FUNCIONA BIEN
 router.post('/crear', uploadImgProduct.array('img'), createProcess)
 
 //Editar

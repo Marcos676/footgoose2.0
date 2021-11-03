@@ -40,36 +40,13 @@
               <h3>Comprar por</h3>
               <section class="imgs">
 
-                <div>
-                  <a href="">
-                    <img src="images/categorias/iconoPerro.png" alt="perro">
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <img src="images/categorias/iconoGato.png" alt="gato">
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <img src="images/categorias/iconoAve.png" alt="ave">
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <img src="images/categorias/iconoPez.png" alt="pez">
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <img src="images/categorias/iconoRoedor.png" alt="roedor">
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <img src="images/categorias/iconoReptil.png" alt="reptil">
-                  </a>
-                </div>
+                <% animals.forEach(animal => { %>
+                  <div>
+                    <a href="">
+                      <img src="images/categorias/<%= animal.image %> " alt="<%= animal.name %>">
+                    </a>
+                  </div>
+                <% }) %>
 
               </section>
             </div>
@@ -96,9 +73,9 @@
                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                                  <div class="carousel-inner" style="width: 100%; object-fit: contain;">
 
-                                  <% product.image.forEach((img, i) => { %>
+                                  <% product.images.forEach((img, i) => { %>
                                     <div class="carousel-item <%= i === 0 ? "active" : null %>">
-                                      <img src="/images/productos/<%= img %>"
+                                      <img src="/images/productos/<%= img.name %>"
                                         class="d-block w-100" style="width: 100%; height: 250px; object-fit: contain;"
                                         data-interval="1000" alt="...">
                                     </div>    
@@ -118,14 +95,14 @@
                              <%= product.price %>
                              </span>
                                <span class="descontado">
-                                 <%= product.discount.toFixed(2) %>%OFF
+                                 <%= product.discount %>%OFF
                                </span>
                            </p>
                            <!-- cantidad y comprar -->
 
-                             <div class="box">
+                             <!-- <div class="box">
                                <input type="number" max="10" min="0">
-                             </div>
+                             </div> -->
                              <div class="btn-compra">
                                <button type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i>
                                  Agregar</button>

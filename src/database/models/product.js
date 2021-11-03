@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         foreingKey: "subCategoryId" //por las dudas especificamos la columna de la foreingKey
       })
 
-      Product.belongsTo(model.Label, {
+      Product.belongsTo(models.Label, {
         as: "label",
         foreingKey: "labelId"
       })

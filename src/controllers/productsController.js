@@ -1,3 +1,4 @@
+const db = require('../database/models')
 const fs = require("fs")
 const path = require("path")
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -10,37 +11,62 @@ const products = require('../data/products.json');
 
 module.exports = {
     list: (req, res) => {
-        const products = require('../data/products.json');
-        res.render('./products/catalogo', {
-            products
-        })
+        let products = db.Product.findAll({
+            include: ['images']
+        });
+
+        let animals = db.Animal.findAll()
+
+        Promise.all([products, animals])
+            .then(([products, animals]) => {
+                //return res.send(animals)
+                res.render('./products/catalogo', {
+                    products,
+                    animals
+                })
+            }).catch(error => res.send(error))
+
     },
     detail: (req, res) => {
-        let productEdited = products.find(product => product.id === +req.params.id);
 
-        let product = {
-            id: productEdited.id,
-            name: productEdited.name,
-            description: productEdited.description,
-            price: productEdited.price,
-            discount: productEdited.discount,
-            cuantity: productEdited.cuantity,
-            image: productEdited.image,
-            label: labels.find(label => label.id === productEdited.label),
-            animal: animals.find(animal => animal.id === productEdited.animal),
-            category: categories.find(category => category.id === productEdited.category),
-            subCategory: subCategories.find(subCategory => subCategory.id === productEdited.subCategory)
-        }
-        return res.render('./products/productDetail', {
-            product
+        db.Product.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: ['images', 'label', {
+                association: 'subCategory',
+                include: [{
+                    association: 'category',
+                    include: ['animal']
+                }]
+            }]
         })
+            .then(product => {
+                //return res.send(product)
+                return res.render('./products/productDetail', {
+                    product
+                })
+            }).catch(error => res.send(error))
+
+
     },
     create: (req, res) => {
-        res.render('./products/productCreate', {
-            animals,
-            categories,
-            subCategories,
-            labels
+        let animals = db.Animal.findAll()
+
+        let categories = db.Category.findAll()
+
+        let subCategories= db.SubCategory.findAll()
+
+        let labels= db.Label.findAll()
+
+        Promise.all([animals, categories, subCategories, labels])
+        .then(([animals, categories, subCategories, labels]) => {
+            res.render('./products/productCreate', {
+                animals,
+                categories,
+                subCategories,
+                labels
+            })
         })
     },
     createProcess: (req, res) => {
