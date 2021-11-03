@@ -2,9 +2,9 @@ require("dotenv").config();
 module.exports = {
   development: {
     username: process.env.DB_USER,
-    password: process.env.PASS,
-    database: "footgoose2.0_db_gaby",
-    host: process.env.HOST,
+    password: process.env.DB_PASS,
+    database: "footgoose2.0_db",
+    host: process.env.DB_HOST,
     dialect: "mysql",
   },
   test: {

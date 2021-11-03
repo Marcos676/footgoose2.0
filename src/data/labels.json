@@ -1,14 +1,17 @@
 [
     {
         "id": 1,
-        "name": "Descuento"
+        "name": "Descuento",
+        "image": "labelDescuento.png"
     },
     {
         "id": 2,
-        "name": "Nuevo"
+        "name": "Nuevo",
+        "image": "labelNuevo.png"
     },
     {
         "id": 3,
-        "name": "Sin etiqueta"
+        "name": "Sin etiqueta",
+        "image": null
     }
 ]
