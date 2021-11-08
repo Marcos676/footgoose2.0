@@ -37,5 +37,24 @@ for (let i = 1; i <= 50; i++) {
   }
 
 }
+// para correr este archivo y verificar la construccion de los objetos hacer en consola:  node prueba
+//console.log(images);
 
-console.log(images);
+
+
+
+let animalsJson = require('./src/data/animals.json')
+
+let animals = []
+
+animalsJson.forEach(animal => {
+  let item = {
+    ...animal,
+    createdAt: new Date,
+    updatedAt: new Date
+  }
+  animals.push(item)
+})
+
+// para correr este archivo y verificar la construccion de los objetos hacer en consola:  node prueba
+console.log(animals);
