@@ -1,21 +1,28 @@
+//------------------------------------- EJEMPLOS ---------------------------------------------------------
 const faker = require('faker')
 
-// let products = [...Array(50)].map(product => (
+let products = [...Array(50)].map(product => (
 
-//     product = {
-//       name: faker.commerce.productName(),
-//       description: faker.commerce.productDescription(),
-//       price: faker.datatype.number({ min: 100, max: 9999 }),
-//       discount: faker.datatype.number({ min: 0, max: 100 }),
-//       expiration: faker.date.future(),
-//       cuantity: faker.datatype.number({ min: 0, max: 100 }),
-//       labelId: faker.datatype.number({ max: 3, min: 1 }),
-//       subCategoryId: faker.datatype.number({ max: 36, min: 1 }),
-//       createdAt: new Date,
-//       updatedAt: new Date
-//     }
+    product = {
+      name: faker.commerce.productName(),
+      description: faker.commerce.productDescription(),
+      price: faker.datatype.number({ min: 100, max: 9999 }),
+      discount: faker.datatype.number({ min: 0, max: 100 }),
+      expiration: faker.date.future(),
+      cuantity: faker.datatype.number({ min: 0, max: 100 }),
+      labelId: faker.datatype.number({ max: 3, min: 1 }),
+      subCategoryId: faker.datatype.number({ max: 36, min: 1 }),
+      createdAt: new Date,
+      updatedAt: new Date
+    }
   
-//   ))
+  ))
+
+// para correr este archivo y verificar la construccion de los objetos hacer en consola:  node prueba
+console.log(products);
+
+
+//--------------------------------------------------------------------------------------------------
 
 let img = 1
 const images = []
@@ -40,7 +47,7 @@ for (let i = 1; i <= 50; i++) {
 // para correr este archivo y verificar la construccion de los objetos hacer en consola:  node prueba
 //console.log(images);
 
-
+//--------------------------------------------------------------------------------------------------
 
 
 let animalsJson = require('./src/data/animals.json')
@@ -57,4 +64,4 @@ animalsJson.forEach(animal => {
 })
 
 // para correr este archivo y verificar la construccion de los objetos hacer en consola:  node prueba
-console.log(animals);
+//console.log(animals);
